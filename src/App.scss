@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  width: calc(64px * 8);
+  height: calc(64px * 8);
+  display: flex;
+  flex-wrap: wrap;
+  background: url('./assets/board.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell{
+  // background-color:orange;
+}
+
+.black {
+  /* background-color: #866039; */
+}
+
+.white {
+  /* background-color: #c9b080; */
+}
+
+
