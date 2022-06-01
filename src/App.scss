@@ -27,18 +27,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-.cell{
-  // background-color:orange;
+  img{
+    width: 48px;
+    height: 48px;
+    position: relative;
+  }
 }
 
 .black {
-  /* background-color: #866039; */
+  // background-color: #866039;
 }
 
 .white {
-  /* background-color: #c9b080; */
+  // background-color: #c9b080;
 }
-
-

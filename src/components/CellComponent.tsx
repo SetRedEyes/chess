@@ -1,10 +1,10 @@
+import { Cell } from '../models/Cell'
+interface CellProps {
+  cell: Cell
+}
 
-const CellComponent = () => {
-  return (
-    <div className="cell">
-      
-    </div>
-  );
-};
+const CellComponent = ({ cell }: CellProps) => {
+  return <div className={['cell', cell.color].join(' ')}>{cell.figure?.logo && <img src={cell.figure.logo} alt={cell.figure.name} />}</div>
+}
 
-export default CellComponent;
+export default CellComponent
