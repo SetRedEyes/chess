@@ -11,7 +11,16 @@ const BoardComponent = ({ board, setBoard }: BoardProps) => {
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
   const clickHandler = (cell: Cell) => {
-    cell.figure && setSelectedCell(cell)
+    if (
+      selectedCell &&
+      selectedCell !== cell &&
+      selectedCell.figure?.canMove(cell)
+    ) {
+      selectedCell.moveFigure(cell)
+      setSelectedCell(null)
+    } else if (cell.figure) {
+      setSelectedCell(cell)
+    }
   }
 
   useEffect(() => {
@@ -23,7 +32,7 @@ const BoardComponent = ({ board, setBoard }: BoardProps) => {
     updateBoard()
   }
 
-  function updateBoard() {
+  const updateBoard = () => {
     const newBoard = board.getCopyBoard()
     setBoard(newBoard)
   }

@@ -16,7 +16,7 @@ export class Cell {
     x: number,
     y: number,
     color: Colors,
-    figure: Figure | null,
+    figure: Figure | null
   ) {
     this.x = x
     this.y = y
@@ -25,5 +25,13 @@ export class Cell {
     this.board = board
     this.available = false
     this.id = Math.random()
+  }
+
+  moveFigure(target: Cell) {
+    if (this?.figure?.canMove(target)) {
+      this.figure.moveFigure(target)
+      target.figure = this.figure
+      this.figure = null
+    }
   }
 }
