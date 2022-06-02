@@ -1,13 +1,21 @@
 import { Fragment, useEffect, useState } from 'react'
 import { Board } from '../models/Board'
 import { Cell } from '../models/Cell'
+import { Player } from '../models/Player'
 import CellComponent from './CellComponent'
 interface BoardProps {
   board: Board
   setBoard: (board: Board) => void
+  currentPlayer: Player | null
+  swapPlayer: () => void
 }
 
-const BoardComponent = ({ board, setBoard }: BoardProps) => {
+const BoardComponent = ({
+  board,
+  setBoard,
+  currentPlayer,
+  swapPlayer
+}: BoardProps) => {
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
   const clickHandler = (cell: Cell) => {
@@ -17,8 +25,9 @@ const BoardComponent = ({ board, setBoard }: BoardProps) => {
       selectedCell.figure?.canMove(cell)
     ) {
       selectedCell.moveFigure(cell)
+      swapPlayer()
       setSelectedCell(null)
-    } else if (cell.figure) {
+    } else if (cell.figure?.color === currentPlayer?.color) {
       setSelectedCell(cell)
     }
   }
@@ -38,22 +47,25 @@ const BoardComponent = ({ board, setBoard }: BoardProps) => {
   }
 
   return (
-    <div className='board'>
-      {board.cells.map((row, index) => (
-        <Fragment key={index}>
-          {row.map((cell) => (
-            <CellComponent
-              selectCellClick={clickHandler}
-              cell={cell}
-              key={cell.id}
-              selected={
-                cell.x === selectedCell?.x && cell.y === selectedCell?.y
-              }
-            />
-          ))}
-        </Fragment>
-      ))}
-    </div>
+    <>
+    <h3>Current player {currentPlayer?.color}</h3>
+      <div className='board'>
+        {board.cells.map((row, index) => (
+          <Fragment key={index}>
+            {row.map((cell) => (
+              <CellComponent
+                selectCellClick={clickHandler}
+                cell={cell}
+                key={cell.id}
+                selected={
+                  cell.x === selectedCell?.x && cell.y === selectedCell?.y
+                }
+              />
+            ))}
+          </Fragment>
+        ))}
+      </div>
+    </>
   )
 }
 
