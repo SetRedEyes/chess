@@ -9,6 +9,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url('./assets/wood.jpg');
+  background-size: cover;
 }
 
 .board {
@@ -19,6 +21,8 @@
   background: url('./assets/board.jpg');
   background-size: contain;
   background-repeat: no-repeat;
+  filter: contrast(120%) saturate(100%) ;
+  
 }
 
 .cell {
@@ -35,11 +39,11 @@
   }
 
   &.selected {
-    background-color: rgb(0, 185, 173);
+    background-color: #00b9ad;
   }
 
   &.available-attack {
-    background: green;
+    background: rgb(255, 0, 0);
   }
 
   .available-move {
