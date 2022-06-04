@@ -8,10 +8,12 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-image: url('./assets/wood.jpg');
+  // align-items: center;
+  background-image: url('./assets/background.jpg');
   background-size: cover;
 }
+
+
 
 .board {
   width: calc(64px * 8);
@@ -67,4 +69,28 @@
 
 .white {
   // background-color: #c9b080;
+}
+
+.player {
+  color: white;
+  text-align: center;
+  font: 3rem cursive;
+  font-weight: 1000;
+  background-image: url('./assets/stone.jpg');
+  background-size: 10rem 5rem;
+  background-clip: text;
+  filter: brightness(90%);
+  color: transparent;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.lost {
+  height: calc(50vh - 60px);
+  padding: 30px;
+  margin-left: 50px;
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
 }

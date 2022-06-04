@@ -47,8 +47,11 @@ const BoardComponent = ({
   }
 
   return (
-    <>
-    <h3>Current player {currentPlayer?.color}</h3>
+    <div>
+      <h1 className='player'>
+        Current player:{" "}
+          {currentPlayer?.color}
+      </h1>
       <div className='board'>
         {board.cells.map((row, index) => (
           <Fragment key={index}>
@@ -65,7 +68,7 @@ const BoardComponent = ({
           </Fragment>
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
