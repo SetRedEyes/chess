@@ -82,8 +82,11 @@
   margin: 1rem 0 0.5rem 0;
 }
 
+.lost-board {
+  display: grid;
+}
+
 .lost {
-  padding: 30px;
   margin-left: 50px;
 
   img {

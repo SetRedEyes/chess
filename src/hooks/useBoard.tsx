@@ -19,7 +19,7 @@ export interface IBoardContext {
 const BoardContext = React.createContext<IBoardContext | null>(null)
 
 export const useBoard = () => {
-  return useContext(BoardContext)
+  return useContext(BoardContext) as IBoardContext
 }
 
 export const BoardProvider = ({ children }: BoardContextProps) => {

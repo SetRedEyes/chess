@@ -1,13 +1,12 @@
 import './App.scss'
-import BoardComponent from './components/BoardComponent'
+import ChessTableComponent from './components/ChessTableComponent'
 import { BoardProvider } from './hooks/useBoard'
 
 const App = () => {
   return (
     <BoardProvider>
       <div className='app'>
-        <BoardComponent />
-        <div></div>
+        <ChessTableComponent />
       </div>
     </BoardProvider>
   )
