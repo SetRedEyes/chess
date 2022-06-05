@@ -25,8 +25,8 @@ export const useBoard = () => {
 
 export const BoardProvider = ({ children }: BoardContextProps) => {
   const [board, setBoard] = useState(new Board())
-  const [whitePlayer, setWhitePlayer] = useState(new Player(Colors.WHITE))
-  const [blackPlayer, setBlackPlayer] = useState(new Player(Colors.BLACK))
+  const [whitePlayer] = useState(new Player(Colors.WHITE))
+  const [blackPlayer] = useState(new Player(Colors.BLACK))
   const [currentPlayer, setCurrentPlayer] = useState<Player | null>(null)
 
   useEffect(() => {
