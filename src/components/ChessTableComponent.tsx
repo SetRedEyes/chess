@@ -14,7 +14,6 @@ const ChessTableComponent = () => {
         <BoardComponent board={board} />
         <Timer currentPlayer={currentPlayer} restart={restart} />
       </div>
-
       <LostFigures title='White figures' figures={board.lostWhiteFigures} />
     </>
   )

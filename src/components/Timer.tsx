@@ -43,9 +43,9 @@ const Timer = ({ currentPlayer, restart }: TimerProps) => {
   return (
     <div className='timer'>
       <h2 className='player-time'>Black - {blackTime}</h2>
-
-      <button className='restart-btn' onClick={handleRestart}>Restart game</button>
-
+      <button className='restart-btn' onClick={handleRestart}>
+        Restart game
+      </button>
       <h2 className='player-time'>White - {whiteTime} </h2>
     </div>
   )
