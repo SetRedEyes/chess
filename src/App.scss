@@ -3,6 +3,15 @@
   padding: 0;
 }
 
+.stone-background {
+  background-image: url('./assets/stone.jpg');
+  background-size: 10rem 5rem;
+  background-clip: text;
+  color: transparent;
+  filter: brightness(90%);
+  font: 1000 3rem cursive;
+}
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -23,22 +32,18 @@
 
   .lost-figures {
     margin-top: 2rem;
+    @extend .stone-background;
     font: 1.2rem cursive;
-    font-weight: 1000;
-    background-image: url('./assets/stone.jpg');
-    background-size: 10rem 5rem;
-    background-clip: text;
     filter: brightness(150%);
-    color: transparent;
     margin: 1rem 0 1rem 0;
 
     .figure {
       display: flex;
-      margin-top: 1rem;
+      margin-top: 0.8rem;
       justify-content: center;
 
       .figure-name {
-        font-size: 1rem;
+        font-size: 1.3rem;
       }
 
       img {
@@ -51,14 +56,8 @@
 
 .player-board {
   .player {
+    @extend .stone-background;
     text-align: center;
-    font: 3rem cursive;
-    font-weight: 1000;
-    background-image: url('./assets/stone.jpg');
-    background-size: 10rem 5rem;
-    background-clip: text;
-    filter: brightness(90%);
-    color: transparent;
     margin: 1rem 0 1rem 0;
   }
 
@@ -71,8 +70,48 @@
     background-size: contain;
     background-repeat: no-repeat;
     filter: contrast(120%) saturate(100%);
-    max-width: 100%;
-    height: auto;
+  }
+
+  .timer {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .player-time {
+      @extend .stone-background;
+      font: 1000 2rem cursive;
+      filter: brightness(120%);
+    }
+
+    .restart-btn {
+      background-size: cover;
+      border: 5px solid transparent;
+      border-radius: 20px;
+      line-height: 1;
+      margin: 0.5em;
+      padding: 0.5rem 1rem;
+      color: rgb(0, 0, 0);
+      transition: 0.25s;
+      font: 1000 1rem cursive;
+      &:hover,
+      &:focus {
+        animation: pulse 1s;
+        box-shadow: 0 0 0 2em transparent;
+        background-color: transparent;
+        color: white;
+        border-color: white;
+      }
+      &:active {
+        position: relative;
+        top: 1px;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 white;
+        }
+      }
+    }
   }
 }
 
@@ -113,18 +152,11 @@
   }
 }
 
-.black {
-  // background-color: #866039;
+.letters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .l{
+    margin-left: 2rem;
+  }
 }
-
-.white {
-  // background-color: #c9b080;
-}
-
-// .table {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   width: 100vw;
-//   height: 100vh;
-// }

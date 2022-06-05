@@ -14,6 +14,7 @@ export interface IBoardContext {
   currentPlayer: Player | null
   swapPlayer: () => void
   setBoard: (board: Board) => void
+  restart: () => void
 }
 
 const BoardContext = React.createContext<IBoardContext | null>(null)
@@ -54,7 +55,8 @@ export const BoardProvider = ({ children }: BoardContextProps) => {
         whitePlayer,
         blackPlayer,
         currentPlayer,
-        swapPlayer
+        swapPlayer,
+        restart
       }}
     >
       {children}
