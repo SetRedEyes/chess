@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useState } from 'react'
-import { IBoardContext, useBoard } from '../hooks/useBoard'
+import { useBoard } from '../hooks/useBoard'
 import { Board } from '../models/Board'
 import { Cell } from '../models/Cell'
 import CellComponent from './CellComponent'
@@ -39,7 +39,7 @@ const BoardComponent = ({ board }: BoardProps) => {
     const newBoard = board.getCopyBoard()
     setBoard(newBoard)
   }
-  
+
   return (
     <div className='board'>
       {board.cells.map((row, index) => (

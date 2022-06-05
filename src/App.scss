@@ -6,27 +6,79 @@
 .app {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  // align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 4.5fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
   background-image: url('./assets/background.jpg');
   background-size: cover;
 }
 
-.board {
-  width: calc(64px * 8);
-  height: calc(64px * 8);
+.lost-figures-board {
+  width: 14.9rem;
   display: flex;
-  flex-wrap: wrap;
-  background: url('./assets/board.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  filter: contrast(120%) saturate(100%);
+  justify-content: center;
+  background-color: rgba(91, 62, 62, 0.71);
+  backdrop-filter: blur(2px);
+
+  .lost-figures {
+    margin-top: 2rem;
+    font: 1.2rem cursive;
+    font-weight: 1000;
+    background-image: url('./assets/stone.jpg');
+    background-size: 10rem 5rem;
+    background-clip: text;
+    filter: brightness(150%);
+    color: transparent;
+    margin: 1rem 0 1rem 0;
+
+    .figure {
+      display: flex;
+      margin-top: 1rem;
+      justify-content: center;
+
+      .figure-name {
+        font-size: 1rem;
+      }
+
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+}
+
+.player-board {
+  .player {
+    text-align: center;
+    font: 3rem cursive;
+    font-weight: 1000;
+    background-image: url('./assets/stone.jpg');
+    background-size: 10rem 5rem;
+    background-clip: text;
+    filter: brightness(90%);
+    color: transparent;
+    margin: 1rem 0 1rem 0;
+  }
+
+  .board {
+    width: calc(4.3rem * 8);
+    height: calc(4.3rem * 8);
+    display: flex;
+    flex-wrap: wrap;
+    background-image: url('./assets/board.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: contrast(120%) saturate(100%);
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 .cell {
-  width: 64px;
-  height: 64px;
+  width: 4.3rem;
+  height: 4.3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,28 +121,10 @@
   // background-color: #c9b080;
 }
 
-.player {
-  color: white;
-  text-align: center;
-  font: 3rem cursive;
-  font-weight: 1000;
-  background-image: url('./assets/stone.jpg');
-  background-size: 10rem 5rem;
-  background-clip: text;
-  filter: brightness(90%);
-  color: transparent;
-  margin: 1rem 0 0.5rem 0;
-}
-
-.lost-board {
-  display: grid;
-}
-
-.lost {
-  margin-left: 50px;
-
-  img {
-    width: 20px;
-    height: 20px;
-  }
-}
+// .table {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 100vw;
+//   height: 100vh;
+// }

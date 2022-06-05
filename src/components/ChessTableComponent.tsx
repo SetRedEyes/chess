@@ -1,19 +1,19 @@
 import { IBoardContext, useBoard } from '../hooks/useBoard'
 import BoardComponent from './BoardComponent'
-import LostFiguresTableComponent from './LostFiguresTableComponent'
+import LostFigures from './LostFigures'
 import PlayerColorComponent from './PlayerColorComponent'
 
 const ChessTableComponent = () => {
   const { board, currentPlayer } = useBoard() as IBoardContext
   return (
-    <div>
-      <PlayerColorComponent currentPlayer={currentPlayer} />
-      <BoardComponent board={board} />
-      <LostFiguresTableComponent
-        lostBlackFigures={board.lostBlackFigures}
-        lostWhiteFigures={board.lostWhiteFigures}
-      />
-    </div>
+    <>
+      <LostFigures title='Black figures' figures={board.lostBlackFigures} />
+      <div className='player-board'>
+        <PlayerColorComponent currentPlayer={currentPlayer} />
+        <BoardComponent board={board} />
+      </div>
+      <LostFigures title='White figures' figures={board.lostWhiteFigures} />
+    </>
   )
 }
 
