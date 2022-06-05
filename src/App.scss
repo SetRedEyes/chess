@@ -13,8 +13,6 @@
   background-size: cover;
 }
 
-
-
 .board {
   width: calc(64px * 8);
   height: calc(64px * 8);
@@ -85,7 +83,6 @@
 }
 
 .lost {
-  height: calc(50vh - 60px);
   padding: 30px;
   margin-left: 50px;
 
