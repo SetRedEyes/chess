@@ -1,10 +1,8 @@
-import { Player } from '../models/Player'
+import { useBoard } from '../hooks/useBoard'
 
-interface PlayerColorProps {
-  currentPlayer: Player | null
-}
+const PlayerColorComponent = () => {
+  const { currentPlayer } = useBoard()
 
-const PlayerColorComponent = ({ currentPlayer }: PlayerColorProps) => {
   return <h1 className='player'>Current player: {currentPlayer?.color}</h1>
 }
 

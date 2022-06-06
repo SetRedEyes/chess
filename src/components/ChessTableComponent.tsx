@@ -5,14 +5,14 @@ import PlayerColorComponent from './PlayerColorComponent'
 import Timer from './Timer'
 
 const ChessTableComponent = () => {
-  const { board, restart, currentPlayer } = useBoard() as IBoardContext
+  const { board } = useBoard() as IBoardContext
   return (
     <>
       <LostFigures title='Black figures' figures={board.lostBlackFigures} />
       <div className='player-board'>
-        <PlayerColorComponent currentPlayer={currentPlayer} />
+        <PlayerColorComponent />
         <BoardComponent board={board} />
-        <Timer currentPlayer={currentPlayer} restart={restart} />
+        <Timer />
       </div>
       <LostFigures title='White figures' figures={board.lostWhiteFigures} />
     </>
