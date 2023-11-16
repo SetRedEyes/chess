@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, FC } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { Board } from '../models/Board'
 import { Colors } from '../models/Colors'
 import { Player } from '../models/Player'

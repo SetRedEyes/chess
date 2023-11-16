@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+
 .stone-background {
   background-image: url('./assets/stone.jpg');
   background-size: 10rem 5rem;
@@ -151,3 +152,57 @@
     background-color: #0000005e;
   }
 }
+
+@media (max-width: 767px) {
+  .app {
+     width: 135%;
+     height: 100%;
+     display: flex;
+    flex-direction: column;
+   
+     justify-items: center;
+     align-items: center;
+     justify-content: center;
+     background-image: url('./assets/background.jpg');
+     background-size: contain;
+  }
+ 
+  .lost-figures-board {
+     width: 100%;
+  }
+ 
+  .player-board {
+    .board {
+      margin-top: 5rem;
+      margin-bottom: 4rem;
+      width: calc(4.3rem * 8);
+      height: calc(4.3rem * 8);
+      display: flex;
+      flex-wrap: wrap;
+      background-image: url('./assets/board.jpg');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .timer {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-left: 1rem;
+      margin-right: 1rem;
+  
+    }
+     .timer {
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+
+       .restart-btn {
+        position: absolute;
+        left:54%;
+         font-size: 0.8rem;
+       }
+     }
+    }
+ }
